@@ -108,34 +108,6 @@ export default {
         },
 
         {
-            name: 'touchmove',
-
-            passive: false,
-
-            el() {
-                return this.panel;
-            },
-
-            handler(e) {
-
-                if (e.targetTouches.length !== 1) {
-                    return;
-                }
-
-                const clientY = event.targetTouches[0].clientY - this.clientY;
-                const {scrollTop, scrollHeight, clientHeight} = this.panel;
-
-                if (scrollTop === 0 && clientY > 0
-                    || scrollHeight - scrollTop <= clientHeight && clientY < 0
-                ) {
-                    e.preventDefault();
-                }
-
-            }
-
-        },
-
-        {
             name: 'show',
 
             self: true,
